@@ -68,6 +68,8 @@ const App = () => {
     setHexColor(e.target.value)
   }
 
+  console.log(realPixel)
+
   return (
     <div className="app__component">
       <div className='filter__card'>
@@ -78,7 +80,7 @@ const App = () => {
         <div className='card__center'>
           <div className='input__container'>
             <input className='filter__input' value={hexColor} onChange={(e) => setValue(e)} type="text" placeholder='#000000' />
-            {/* <input className='filter__input' value={hexColor} onChange={(e) => setValue(e)} type="color" placeholder='#000000' /> */}
+            <input className='filter__input color__picker' value={hexColor} onChange={(e) => setValue(e)} type="color" placeholder='#000000' />
             <div className='filter__error'>{error}</div>
           </div>
           <div className='btn__container'>
@@ -87,14 +89,14 @@ const App = () => {
           </div>
         </div>
         <div className='filter__display'>
-          <div style={{backgroundColor: realPixel }}  className='real__pixel'>
+          <div style={{ backgroundColor: realPixel || "#000000" }}  className='real__pixel'>
           </div>
-          {/* <div style={{ filterPixel }}  className='filter__pixel'>
-          </div> */}
+          <div style={{ backgroundColor: "#000000", filter: `${filterPixel}` }}  className='filter__pixel'>
+          </div>
         </div>
         <div className='filter__results'>
           <div className='filter__result'>
-            Output: <br/>{filterDetail}
+            Output: <br/>filter: {filterDetail}
           </div>
           <div className='filter__loss'>
             {lossDetail}

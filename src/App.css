@@ -134,6 +134,8 @@
 .filter__pixel {
   width: 100px;
   height: 100px;
+  border-radius: 8px;
+  margin-left: 20px;
 }
 
 .filter__result {
