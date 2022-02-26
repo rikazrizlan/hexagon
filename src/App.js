@@ -1,11 +1,9 @@
 import './App.css';
 import {useState} from 'react';
-import BgImg from './assets/images/bg3.jpg';
 import Color from './classes/Color';
 import Solver from './classes/Solver';
 
 const App = () => {
-
   const [hexColor, setHexColor] = useState('');
   const [filterDetail, setFilterDetail] = useState('');
   const [lossDetail, setLossDetail] = useState('');
